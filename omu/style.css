@@ -1,0 +1,330 @@
+/* ===== Webサイト全体のスタイル ===== */
+/* html */
+html {
+  height: 100%;
+  
+}
+
+/* body */
+body {
+  font-family: sans-serif;
+  height: 100%;
+  margin: 0;
+  color:#734e30;
+}
+
+/* h1見出し */
+h1 {
+  color: #FFE4C9;/* フォントの色 */
+  font-size: 80px;/* フォントの大きさ */
+  font-family: sacramento;/* フォントの種類 */
+  padding: 20px;/* 内側の余白 */
+  margin: 30px;/* 外側の余白 */
+  text-shadow: 2px 2px 4px gray;
+}
+
+nav {
+  background-color: #BED1CF;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+nav ul {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 40px;
+}
+
+nav a {
+  color: #734e30;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #ffcc11;
+}
+
+/* ===== ヘッダーのスタイル ===== */
+/* ヘッダーの箱 */
+header {
+  background-image: url(img/omu6.jpg);/* 背景画像 */
+  height: 400px;/* 高さ */
+  background-size: cover;
+  padding-top:150px;/* 上がわの余白 */
+}
+
+.history{
+  padding:30px;
+  background-color: #FFF7F1;
+}
+
+.history h3{
+  color:#734e30;
+}
+
+.history p{
+  color: #734e30;
+}
+/* ===== お店紹介のスタイル ===== */
+/* セクション */
+.shop {
+  background-color: #fff7f1;/* 背景の色 */
+  color: #734e30;
+  height:100%;
+  padding: 30px;
+}
+
+.tukurikata{
+  padding-right: 20px;
+}
+.recpi{
+  padding:10px;
+}
+.recpi table {
+ background-color: #fff7f1;
+ width: 300px;
+ float: left;
+ padding:20px;
+ height:80%;
+ border-collapse: collapse;
+ margin-right: 20px;
+ }
+
+.recpi tr{
+ border-bottom: solid 2px white;
+ }
+ 
+.recip tr:last-child{
+  border-bottom: none;
+}
+.recpi td {
+  width: 70%;
+  text-align: center;
+  background-color: #FFE4C9;
+  padding: 10px 0;
+}
+.recpi th{
+  position: relative;
+  width: 30%;
+  background-color: #E78895;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.recip th:after{
+  display: block;
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  top:calc(50% - 10px);
+  right:-10px;
+  border-left: 10px solid #52c2d0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+.recip p{
+  margin-top: 20px;
+}
+/* h2見出し */
+.title {
+  font-size: 30px;
+  border-left-style: solid;
+  border-left-width: 10px;
+  padding-left: 15px;
+  margin-bottom: 10px;
+  color:#E78895;
+}
+
+
+#popup {
+  display: none; /* label でコントロールするので input は非表示に */
+}
+
+.popup-open {
+  cursor: pointer; /* マウスオーバーでカーソルの形状を変えることで、クリックできる要素だとわかりやすいように */
+}
+
+.popup-overlay {
+  display: none; /* input にチェックが入るまでは非表示に */
+}
+
+#popup:checked ~ .popup-overlay {
+  display: block;
+  z-index: 99999;
+  background-color: #FFF7F1;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+
+.popup-window {
+  width: 90vw;
+  max-width: 560px;
+  padding: 20px;
+  background-color: #fff7f1;
+  border-radius: 6px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.popup-text {
+  margin: 0;
+}
+
+.popup-text:not(:last-of-type) {
+  margin-bottom: 1em
+}
+
+.popup-close {
+  cursor: pointer;
+  position: absolute;
+  top: -26px;
+  right: 0;
+}
+
+/* ===== パン紹介のスタイル ===== */
+/* セクション */
+.photo {
+  padding: 30px;
+  width: 100%;
+  height: 100%;
+  background-color: #FFF7F1;
+}
+
+/* h2見出し */
+
+
+/* h3見出し */
+.photo h3 {
+  color: #743e30;
+}
+
+/* 段落 */
+.photo p {
+  color: #ffffff;
+  clear: left;/* 画像や箱の回り込みをやめる */
+}
+
+/* 大きな箱 */
+.big {
+display:flex;
+height:100%;
+}
+
+
+
+/* 小さな箱 */
+.small {
+  background-color: #fff7f1;
+  width: 480px;
+  padding: 15px;
+  margin: 20px;
+  box-shadow: 10px 10px 20px #000000;
+}
+
+/* 箱 */
+
+
+.modal-wrapper {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 60px 10px;
+  text-align:center;
+  float:left;
+}
+
+
+.modal-wrapper:not(:target) {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s, visibility .3s;
+}
+
+.modal-wrapper:target {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity .4s, visibility .4s;
+}
+
+.modal-wrapper::after {
+  display: inline-block;
+  height: 100%;
+  margin-left: -.05em;
+  vertical-align: middle;
+  content: ""
+}
+
+.modal-wrapper .modal-window {
+  box-sizing: border-box;
+  display: inline-block;
+  z-index: 20;
+  position: relative;
+  width: 70%;
+  max-width: 600px;
+  padding: 30px 30px 15px;
+  border-radius: 2px;
+  background: #fff;
+  box-shadow: 0 0 30px rgba(0, 0, 0, .6);
+  vertical-align: middle
+}
+
+.modal-wrapper .modal-window .modal-content {
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.modal-content p{
+  color:#734e30;
+}
+
+.modal-overlay {
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, .8)
+}
+
+.modal-wrapper .modal-close {
+  z-index: 20;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 35px;
+  color: #95979c !important;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 35px;
+  text-align: center;
+  text-decoration: none;
+  text-indent: 0
+}
+
+.modal-wrapper .modal-close:hover {
+  color: #2b2e38 !important
+}
+
+
+/* フッター */
+footer {
+  text-align: center;
+  background-color: #BED1CF;
+  color: #734e30;
+}
